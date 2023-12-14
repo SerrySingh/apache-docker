@@ -1,1 +1,24 @@
 # apache-docker
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Docker-Apache-blue?style=for-the-badge" alt="Docker Apache Badge">
+</p>
+
+# Apache Docker Container
+
+This Docker container sets up an Apache web server on an Ubuntu base image.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Ubuntu-Latest-orange?style=for-the-badge" alt="Ubuntu Badge">
+  <img src="https://img.shields.io/badge/Docker-19.03%2B-blue?style=for-the-badge" alt="Docker Badge">
+</p>
+
+## Prerequisites
+
+Before running the container, ensure that your system is up-to-date and Docker is installed.
+
+### Update System
+
+```bash
+sudo apt update
+sudo apt upgrade -y
