@@ -37,4 +37,19 @@ git clone https://github.com/SerrySingh/apache-docker.git
 cd httpd-docker
 sudo docker build -t my-apache-image .
 ```
+# View Docker Images
+
+Check the list of Docker images on your system.
+
+```bash
+sudo docker images
+```
+
+# Run Apache Docker Container
+
+To run the Apache Docker container, execute the following command in your terminal:
+
+```bash
+sudo docker run -p 8080:80 my-apache-image
+```
 
