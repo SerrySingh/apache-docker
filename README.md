@@ -1,5 +1,3 @@
-# apache-docker
-
 <p align="center">
   <img src="https://img.shields.io/badge/Docker-Apache-blue?style=for-the-badge" alt="Docker Apache Badge">
 </p>
