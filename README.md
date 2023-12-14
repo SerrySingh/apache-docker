@@ -52,3 +52,18 @@ To run the Apache Docker container, execute the following command in your termin
 sudo docker run -p 8080:80 my-apache-image
 ```
 
+# Jenkins Configure excute shell commands 
+```bash
+
+cd httpd-docker
+ls -lhtr
+
+# Build the Docker image
+docker build -t github-docker .
+
+# Display the list of Docker images
+docker images
+
+docker run -d -p 5000:80 github-docker 
+echo "Done"
+```
