@@ -20,13 +20,14 @@ Before running the container, ensure that your system is up-to-date and Docker i
 ```bash
 sudo apt update
 sudo apt upgrade -y
+```
 
-## Install Docker
+##  Install Docker
 
 ```bash
 sudo apt install docker.io -y
-
-## Usage
+```
+### Usage
 
 ### Build Docker Image
 
@@ -35,4 +36,5 @@ sudo apt install docker.io -y
 git clone https://github.com/SerrySingh/apache-docker.git
 cd httpd-docker
 sudo docker build -t my-apache-image .
+```
 
