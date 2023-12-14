@@ -32,7 +32,6 @@ sudo apt install docker.io -y
 ### Build Docker Image
 
 ```bash
-sudo apt install docker.io -y
 git clone https://github.com/SerrySingh/apache-docker.git
 cd httpd-docker
 sudo docker build -t my-apache-image .
