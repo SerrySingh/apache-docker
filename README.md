@@ -67,3 +67,38 @@ docker images
 docker run -d -p 5000:80 github-docker 
 echo "Done"
 ```
+
+# Jenkins Docker Integration
+
+## Overview
+
+This repository demonstrates the integration of Jenkins with Docker. The goal is to run Docker commands without using `sudo` by adding the Jenkins user to the Docker group.
+
+## Instructions
+
+### Step 1: Add Jenkins to the Docker Group
+
+
+Run the following command to add the Jenkins user to the Docker group:
+
+```bash
+sudo usermod -aG docker jenkins
+
+```
+### Step 2: Restart Jenkins
+
+Restart the Jenkins service to apply the group changes. Use the appropriate command based on your system. For example, on a system using systemd:
+```bash
+sudo systemctl restart jenkins
+```
+### Step 3: Verify Docker Access
+Log in as the Jenkins user and run a simple Docker command to verify that Docker can be accessed without using sudo:
+```bash
+sudo su jenkins
+docker run hello-world
+```
+If successful, you should see a message indicating that Docker is working.
+
+## Repository Structure
+Dockerfile: Contains the Docker image configuration for the Jenkins job.
+Jenkinsfile: Defines the Jenkins pipeline for building and running the Docker container.
