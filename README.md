@@ -100,7 +100,7 @@ docker run hello-world
 If successful, you should see a message indicating that Docker is working.
 
 
-# Setting up for How to share docker container in DockerHub Account through Jenkins (CI/CD). 
+# * How to share docker container in DockerHub Account through Jenkins (CI/CD). 
 
 ## Open Jenkins
 1. Navigate to the Jenkins Dashboard.
