@@ -99,6 +99,59 @@ docker run hello-world
 ```
 If successful, you should see a message indicating that Docker is working.
 
+
+# Setting up for sher docker container Jenkins to  DockerHub (CI/CD). 
+
+## Open Jenkins
+1. Navigate to the Jenkins Dashboard.
+
+2. Go to **Credentials**:
+   - Dashboard -> Credentials -> System -> Global credentials (unrestricted) -> Add Credentials.
+
+3. Open a new tab and proceed to your DockerHub account.
+
+4. In DockerHub:
+   - Go to **Settings** and create a Token.
+   - Copy the Token Password and your Dockerhub Username.
+
+5. Go back to Jenkins:
+   - Add Credentials, and input the Token Password or Username. Save it.
+
+6. Install the Docker Plugin:
+   - Make sure to install the **Docker** plugins.
+
+7. Create a New Job (Freestyle or any).
+
+8. Configure the job:
+   - Click **Source Code Management** and add your Repo URL.
+   - Click **Build Environment** and add your DockerHub Credentials (no.5).
+     - Write Username Variable and Password Variable.
+
+9. Click on **Build Steps**, and choose any step according to your needs. I'll choose **Execute Shell**.
+
+10. Open **Execute Shell** and write the following commands:
+
+```bash
+# Commands
+echo "Docker"
+
+# Change to the directory where your Dockerfile is located
+cd httpd-docker
+ls -lhtr
+
+# Build the Docker image
+docker build -t gjd .
+
+# Display the list of Docker images
+docker images
+
+docker run -d -p 6000:80 gjd
+echo "Done"
+
+echo $dpasswd | docker login -u $duser --password-stdin
+docker tag gjd UserName/RepoName:TagName
+docker push UserName/RepoName:TagName
+```
 ## Repository Structure
 Dockerfile: Contains the Docker image configuration for the Jenkins job.
 Jenkinsfile: Defines the Jenkins pipeline for building and running the Docker container.
