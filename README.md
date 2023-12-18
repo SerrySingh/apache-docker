@@ -139,8 +139,8 @@ echo "Docker"
 cd httpd-docker
 ls -lhtr
 
-# Build the Docker image
-docker build -t gjd .
+# Stop and remove any existing container running on port 3000
+#docker stop $(docker ps -q -f "publish=3000") && docker rm $(docker ps -aq -f "publish=3000")
 
 # Display the list of Docker images
 docker images
