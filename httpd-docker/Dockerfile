@@ -14,7 +14,7 @@ COPY ./my-apache.conf /etc/apache2/sites-available/000-default.conf
 RUN mkdir -p /var/www/html
 
 # Copy a simple HTML file into the container
-COPY ./index.html /var/www/html/index.html
+COPY ./index.html /var/www/html/
 
 # Expose port 80 for incoming HTTP traffic
 EXPOSE 80
