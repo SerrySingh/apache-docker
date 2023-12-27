@@ -152,6 +152,13 @@ echo $dpasswd | docker login -u $duser --password-stdin
 docker tag gjd UserName/RepoName:TagName
 docker push UserName/RepoName:TagName
 ```
+
+## Container Run on Another EC2 instance with jenkins through SCP commands:- 
+
+```bash
+scp -r -o StrictHostKeyChecking=no httpd-docker ubuntu@52.91.166.214:/home/ubuntu
+ssh -T -o StrictHostKeyChecking=no  ubuntu@52.91.166.214 sudo bash /home/ubuntu/httpd-docker/script-bash.sh
+```
 ## Repository Structure
 Dockerfile: Contains the Docker image configuration for the Jenkins job.
 Jenkinsfile: Defines the Jenkins pipeline for building and running the Docker container.
